@@ -1,0 +1,100 @@
+{
+  "name": "eta-ejs-prettifier",
+  "displayName": "ETA/EJS Prettifier",
+  "description": "Format ETA and EJS templates with Prettier.",
+  "version": "0.1.0",
+  "publisher": "eta-ejs",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KEYHAN-A/eta-prettifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KEYHAN-A/eta-prettifier/issues"
+  },
+  "homepage": "https://github.com/KEYHAN-A/eta-prettifier#readme",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onLanguage:eta",
+    "onLanguage:ejs"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "eta",
+        "aliases": [
+          "Eta",
+          "eta"
+        ],
+        "extensions": [
+          ".eta"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "ejs",
+        "aliases": [
+          "EJS",
+          "ejs"
+        ],
+        "extensions": [
+          ".ejs"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "configuration": {
+      "title": "ETA/EJS Prettifier",
+      "properties": {
+        "etaEjsPrettifier.printWidth": {
+          "type": "number",
+          "default": 100,
+          "description": "Specify the line length where the formatter wraps."
+        },
+        "etaEjsPrettifier.tabWidth": {
+          "type": "number",
+          "default": 2,
+          "description": "Number of spaces per indentation-level."
+        },
+        "etaEjsPrettifier.useTabs": {
+          "type": "boolean",
+          "default": false,
+          "description": "Indent lines with tabs instead of spaces."
+        },
+        "etaEjsPrettifier.semi": {
+          "type": "boolean",
+          "default": true,
+          "description": "Print semicolons in script tags when formatting script content."
+        },
+        "etaEjsPrettifier.singleQuote": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use single quotes in script tags when possible."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "package": "npm run build && npx @vscode/vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@eta-ejs/prettier-plugin": "0.1.0",
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-electron": "^2.5.0",
+    "@vscode/vsce": "^3.2.2"
+  }
+}

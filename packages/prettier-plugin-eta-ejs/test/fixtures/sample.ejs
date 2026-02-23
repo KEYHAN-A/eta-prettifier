@@ -1,0 +1,12 @@
+<section>
+<% if (locals.posts?.length) { %>
+  <%# post list %>
+  <ul>
+    <% posts.forEach((post) => { %>
+      <li><%= post.title %></li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No posts</p>
+<% } %>
+</section>

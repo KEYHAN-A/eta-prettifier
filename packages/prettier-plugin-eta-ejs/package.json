@@ -1,0 +1,39 @@
+{
+  "name": "@eta-ejs/prettier-plugin",
+  "version": "0.1.0",
+  "description": "Prettier plugin for ETA and EJS templates.",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KEYHAN-A/eta-prettifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KEYHAN-A/eta-prettifier/issues"
+  },
+  "homepage": "https://github.com/KEYHAN-A/eta-prettifier#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "peerDependencies": {
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/prettier": "^3.0.0",
+    "prettier": "^3.6.2"
+  }
+}

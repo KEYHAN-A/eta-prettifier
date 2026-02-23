@@ -1,0 +1,36 @@
+{
+  "name": "eta-prettifier-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo for ETA/EJS Prettier plugin and VS Code formatter extension.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KEYHAN-A/eta-prettifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KEYHAN-A/eta-prettifier/issues"
+  },
+  "homepage": "https://github.com/KEYHAN-A/eta-prettifier#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run -ws build",
+    "test": "npm run -ws test",
+    "lint": "npm run -ws lint",
+    "typecheck": "npm run -ws typecheck",
+    "licenses:report": "license-checker --summary --production --excludePrivatePackages",
+    "licenses:check": "node scripts/check-licenses.mjs",
+    "package:extension": "npm run --workspace eta-ejs-prettifier package"
+  },
+  "devDependencies": {
+    "@types/node": "^24.4.0",
+    "license-checker": "^25.0.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

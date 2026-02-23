@@ -1,0 +1,24 @@
+name: Package Extension
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run package:extension
+      - name: Upload VSIX
+        uses: actions/upload-artifact@v4
+        with:
+          name: eta-ejs-prettifier-vsix
+          path: packages/vscode-eta-ejs-formatter/*.vsix
