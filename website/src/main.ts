@@ -1,7 +1,5 @@
 import "./styles.css";
 
-import { mountSubscribeForm } from "./components/SubscribeForm";
-
 const app = document.querySelector<HTMLDivElement>("#app");
 
 if (!app) {
@@ -19,7 +17,6 @@ app.innerHTML = `
       <div class="ctaRow">
         <a class="btn primary" href="https://github.com/KEYHAN-A/eta-prettifier">View on GitHub</a>
         <a class="btn" href="#install">Installation Guide</a>
-        <a class="btn" href="#subscribe">Get Version Updates</a>
       </div>
     </header>
 
@@ -60,22 +57,8 @@ app.innerHTML = `
       </ul>
     </section>
 
-    <section id="subscribe">
-      <h2>Subscribe for Updates</h2>
-      <p>
-        Subscribe to release and version updates through your Keyhan ecosystem API gateway.
-        Uses environment-configured endpoints on <code>api.keyhan.info</code>.
-      </p>
-      <div id="subscribeMount"></div>
-    </section>
-
     <footer>
       Built by Keyhan. This project is free and open-source.
     </footer>
   </div>
 `;
-
-const subscribeMount = document.querySelector<HTMLDivElement>("#subscribeMount");
-if (subscribeMount) {
-  mountSubscribeForm(subscribeMount);
-}

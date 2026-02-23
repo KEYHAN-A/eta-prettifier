@@ -6,7 +6,7 @@ export interface SubscribePayload {
   consent: boolean;
 }
 
-export async function subscribeToUpdates(payload: SubscribePayload, token?: string): Promise<{
+export async function subscribeToUpdates(payload: SubscribePayload): Promise<{
   success: boolean;
   error?: string;
 }> {
@@ -18,14 +18,10 @@ export async function subscribeToUpdates(payload: SubscribePayload, token?: stri
     };
   }
 
-  const result = await apiRequest<{ success: true }>(
-    subscribePath,
-    {
-      method: "POST",
-      body: JSON.stringify(payload),
-    },
-    token
-  );
+  const result = await apiRequest<{ success: true }>(subscribePath, {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
 
   return {
     success: result.success,

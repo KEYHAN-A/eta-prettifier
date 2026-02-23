@@ -1,7 +1,6 @@
 export interface ApiClientConfig {
   baseUrl: string;
   subscribePath: string;
-  mePath: string;
 }
 
 export interface ApiResult<T> {
@@ -14,7 +13,6 @@ export function getApiConfig(): ApiClientConfig {
   return {
     baseUrl: import.meta.env.VITE_API_BASE_URL ?? "https://api.keyhan.info",
     subscribePath: import.meta.env.VITE_SUBSCRIBE_PATH ?? "/updates/subscribe",
-    mePath: import.meta.env.VITE_ME_PATH ?? "/auth/me",
   };
 }
 
