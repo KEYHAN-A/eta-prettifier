@@ -10,6 +10,7 @@ app.innerHTML = `
   <div class="wrap">
     <header>
       <h1>ETA/EJS Prettifier</h1>
+      <p><strong>Current build:</strong> v0.1.0</p>
       <p class="lead">
         Open-source formatter extension and plugin for clean, consistent Eta and EJS templates.
         Format Document and Format Selection in VS Code with deterministic output.
@@ -52,8 +53,8 @@ app.innerHTML = `
     <section id="changelog">
       <h2>Version Highlights</h2>
       <ul>
-        <li><strong>0.1.0</strong> - Initial VS Code formatter, Prettier plugin, tests, and CI workflows.</li>
-        <li>GitHub Pages docs + subscription integration for update notifications.</li>
+        <li><strong>v0.1.0</strong> - Initial public build and release asset (<code>eta-ejs-prettifier-0.1.0.vsix</code>).</li>
+        <li>GitHub Pages docs and install guide are now live.</li>
       </ul>
     </section>
 

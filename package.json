@@ -23,7 +23,7 @@
     "typecheck": "npm run -ws typecheck",
     "licenses:report": "license-checker --summary --production --excludePrivatePackages",
     "licenses:check": "node scripts/check-licenses.mjs",
-    "package:extension": "npm run --workspace eta-ejs-prettifier package",
+    "package:extension": "npm run --workspace @eta-ejs/prettier-plugin build && npm run --workspace eta-ejs-prettifier package",
     "site:build": "npm run --workspace eta-ejs-prettifier-site build",
     "site:test": "npm run --workspace eta-ejs-prettifier-site test"
   },

@@ -9,6 +9,9 @@ Open-source formatter tooling for **Eta** and **EJS** templates:
 - VS Code extension for Format Document + Format Selection
 - Prettier plugin for reusable formatting integration
 
+Current build/version: **v0.1.0**  
+Release asset: `eta-ejs-prettifier-0.1.0.vsix`
+
 ## Why This Project
 
 Template files that mix HTML and scriptlets are easy to make messy and hard to review.

@@ -25,6 +25,7 @@ npm run package:extension
 Output:
 
 - `packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-<version>.vsix`
+- Current published build: `v0.1.0` (`eta-ejs-prettifier-0.1.0.vsix`)
 
 ## Create GitHub Release
 
