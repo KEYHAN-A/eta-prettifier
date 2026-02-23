@@ -11,6 +11,7 @@ Open-source formatter tooling for **Eta** and **EJS** templates:
 
 Current build/version: **v0.1.0**  
 Release asset: `eta-ejs-prettifier-0.1.0.vsix`
+Download VSIX: [eta-ejs-prettifier-0.1.0.vsix](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v0.1.0/eta-ejs-prettifier-0.1.0.vsix)
 
 ## Why This Project
 
@@ -35,6 +36,8 @@ formatting conservative enough to avoid changing runtime behavior.
 ## Install
 
 ### VSIX (current)
+
+Direct download: [v0.1.0 VSIX](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v0.1.0/eta-ejs-prettifier-0.1.0.vsix)
 
 1. Build package:
    ```bash

@@ -17,6 +17,7 @@ app.innerHTML = `
       </p>
       <div class="ctaRow">
         <a class="btn primary" href="https://github.com/KEYHAN-A/eta-prettifier">View on GitHub</a>
+        <a class="btn primary" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v0.1.0/eta-ejs-prettifier-0.1.0.vsix">Download v0.1.0 VSIX</a>
         <a class="btn" href="#install">Installation Guide</a>
       </div>
     </header>
@@ -33,6 +34,10 @@ app.innerHTML = `
 
     <section id="install">
       <h2>Installation Guide</h2>
+      <p>
+        Download release build:
+        <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v0.1.0/eta-ejs-prettifier-0.1.0.vsix">eta-ejs-prettifier-0.1.0.vsix</a>
+      </p>
       <ol>
         <li>Clone repo and install dependencies: <code>npm install</code></li>
         <li>Package extension: <code>npm run package:extension</code></li>
