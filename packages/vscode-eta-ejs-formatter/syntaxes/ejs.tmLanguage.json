@@ -1,0 +1,76 @@
+{
+  "name": "EJS",
+  "scopeName": "text.html.ejs",
+  "patterns": [
+    {
+      "include": "#ejsComment"
+    },
+    {
+      "include": "#ejsScriptlet"
+    },
+    {
+      "include": "#ejsOutputEscaped"
+    },
+    {
+      "include": "#ejsOutputRaw"
+    },
+    {
+      "include": "text.html.basic"
+    }
+  ],
+  "repository": {
+    "ejsComment": {
+      "name": "comment.block.ejs",
+      "begin": "<%#",
+      "end": "%>"
+    },
+    "ejsOutputEscaped": {
+      "name": "meta.embedded.block.ejs",
+      "begin": "<%=",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.ejs"
+        }
+      },
+      "end": "%>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.ejs"
+        }
+      },
+      "contentName": "source.js"
+    },
+    "ejsOutputRaw": {
+      "name": "meta.embedded.block.ejs",
+      "begin": "<%-",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.ejs"
+        }
+      },
+      "end": "%>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.ejs"
+        }
+      },
+      "contentName": "source.js"
+    },
+    "ejsScriptlet": {
+      "name": "meta.embedded.block.ejs",
+      "begin": "<%(?![#=-])",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.ejs"
+        }
+      },
+      "end": "%>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.ejs"
+        }
+      },
+      "contentName": "source.js"
+    }
+  }
+}

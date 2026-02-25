@@ -1,0 +1,76 @@
+{
+  "name": "Eta",
+  "scopeName": "text.html.eta",
+  "patterns": [
+    {
+      "include": "#etaComment"
+    },
+    {
+      "include": "#etaScriptlet"
+    },
+    {
+      "include": "#etaOutputEscaped"
+    },
+    {
+      "include": "#etaOutputRaw"
+    },
+    {
+      "include": "text.html.basic"
+    }
+  ],
+  "repository": {
+    "etaComment": {
+      "name": "comment.block.eta",
+      "begin": "<%#",
+      "end": "%>"
+    },
+    "etaOutputEscaped": {
+      "name": "meta.embedded.block.eta",
+      "begin": "<%=",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.eta"
+        }
+      },
+      "end": "%>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.eta"
+        }
+      },
+      "contentName": "source.js"
+    },
+    "etaOutputRaw": {
+      "name": "meta.embedded.block.eta",
+      "begin": "<%-",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.eta"
+        }
+      },
+      "end": "%>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.eta"
+        }
+      },
+      "contentName": "source.js"
+    },
+    "etaScriptlet": {
+      "name": "meta.embedded.block.eta",
+      "begin": "<%(?![#=-])",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.eta"
+        }
+      },
+      "end": "%>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.eta"
+        }
+      },
+      "contentName": "source.js"
+    }
+  }
+}

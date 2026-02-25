@@ -4,97 +4,106 @@
 [![CI](https://github.com/KEYHAN-A/eta-prettifier/actions/workflows/ci.yml/badge.svg)](https://github.com/KEYHAN-A/eta-prettifier/actions/workflows/ci.yml)
 [![Website](https://img.shields.io/badge/docs-GitHub%20Pages-2563eb)](https://keyhan-a.github.io/eta-prettifier/)
 
-Open-source formatter tooling for **Eta** and **EJS** templates:
+Formatter tooling for Eta and EJS template files, shipped as a VS Code extension and a reusable Prettier plugin.
 
-- VS Code extension for Format Document + Format Selection
-- Prettier plugin for reusable formatting integration
+Current release: **v1.0.0**  
+VSIX asset: `eta-ejs-prettifier-1.0.0.vsix`  
+Download: [eta-ejs-prettifier-1.0.0.vsix](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix)
 
-Current build/version: **v0.1.0**  
-Release asset: `eta-ejs-prettifier-0.1.0.vsix`
-Download VSIX: [eta-ejs-prettifier-0.1.0.vsix](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v0.1.0/eta-ejs-prettifier-0.1.0.vsix)
+## Project Identity
 
-## Why This Project
+- Extension developer: **KEYHAN**
+- GitHub repository: `https://github.com/KEYHAN-A/eta-prettifier`
+- Website: `https://keyhan-a.github.io/eta-prettifier/`
 
-Template files that mix HTML and scriptlets are easy to make messy and hard to review.
-This project gives you a predictable formatting baseline for `.eta` and `.ejs` while keeping
-formatting conservative enough to avoid changing runtime behavior.
+## What This Extension Does
+
+- Formats `.eta` and `.ejs` with deterministic output
+- Supports **Format Document** and **Format Selection**
+- Falls back to full document formatting when selection tags are unbalanced
+- Adds language registration for Eta/EJS and syntax grammar support
+- Sets default formatter for `eta` and `ejs` language modes
 
 ## Packages
 
-- `packages/prettier-plugin-eta-ejs` - `@eta-ejs/prettier-plugin`
-- `packages/vscode-eta-ejs-formatter` - `eta-ejs-prettifier` VS Code extension
-- `website/` - GitHub Pages showcase and integration guide
+- `packages/vscode-eta-ejs-formatter` -> VS Code extension `eta-ejs-prettifier`
+- `packages/prettier-plugin-eta-ejs` -> NPM plugin `@eta-ejs/prettier-plugin`
+- `website/` -> project docs and release guide website
 
-## Features
+## Complete Extension Guide
 
-- Formats `.eta` and `.ejs` files in VS Code
-- Supports **Format Document** and **Format Selection**
-- Fallback to full-document formatting when selected range has unbalanced template tags
-- Deterministic formatting (idempotent output)
-- License-check workflow for OSS-friendly distribution
+### 1) Install (VSIX)
 
-## Install
+Option A: download release VSIX  
+[v1.0.0 VSIX](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix)
 
-### VSIX (current)
+Option B: build locally
 
-Direct download: [v0.1.0 VSIX](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v0.1.0/eta-ejs-prettifier-0.1.0.vsix)
+```bash
+npm install
+npm run package:extension
+```
 
-1. Build package:
-   ```bash
-   npm install
-   npm run package:extension
-   ```
-2. In VS Code: Extensions panel -> menu -> `Install from VSIX...`
-3. Select the generated file in `packages/vscode-eta-ejs-formatter/*.vsix`
+Generated file:
+`packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-1.0.0.vsix`
 
-### Marketplace (planned)
+Then in VS Code:
+1. Open Extensions panel
+2. Menu (`...`) -> `Install from VSIX...`
+3. Select the VSIX file
 
-Marketplace publishing is planned after wider fixture coverage.
+### 2) First-Run Setup
 
-## Extension Configuration
+1. Open an `.eta` or `.ejs` file
+2. Confirm language mode is `Eta` or `EJS` in the status bar
+3. Run `Format Document`
 
-Settings are available under `etaEjsPrettifier.*`:
+If prompted, select `ETA/EJS Prettifier` as formatter.
+
+### 3) Formatting Behavior
+
+- **Format Document**: formats the entire file
+- **Format Selection**: formats only selection when tags are balanced
+- **Selection fallback**: if selected template tags are unbalanced, extension safely formats whole document
+
+### 4) Configuration
+
+Settings namespace: `etaEjsPrettifier.*`
 
 | Setting | Type | Default | Description |
 | --- | --- | --- | --- |
-| `etaEjsPrettifier.printWidth` | number | `100` | Maximum line width before wrapping |
-| `etaEjsPrettifier.tabWidth` | number | `2` | Indentation width |
-| `etaEjsPrettifier.useTabs` | boolean | `false` | Use tabs for indentation |
+| `etaEjsPrettifier.printWidth` | number | `100` | Wrap width target |
+| `etaEjsPrettifier.tabWidth` | number | `2` | Spaces per indentation level |
+| `etaEjsPrettifier.useTabs` | boolean | `false` | Use tabs instead of spaces |
 | `etaEjsPrettifier.semi` | boolean | `true` | Keep semicolons where applicable |
 | `etaEjsPrettifier.singleQuote` | boolean | `false` | Prefer single quotes where applicable |
 
-## Quick Before/After
+### 5) Troubleshooting
 
-### ETA
+If file appears plain white text:
+- ensure file extension is `.eta` or `.ejs`
+- check VS Code language mode is `Eta` or `EJS`, not `Plain Text` or `HTML`
+- reload window: `Developer: Reload Window`
 
-Before:
-```eta
-<% if (it.user) { %>
-<h1><%= it.user.name %></h1>
-<% } %>
+If formatting does not run:
+- run `Format Document With...` and choose `ETA/EJS Prettifier`
+- verify no conflicting formatter is forced for `[eta]` / `[ejs]`
+- check `Output -> Log (Extension Host)` for runtime errors
+
+## Prettier Plugin Usage
+
+Install:
+
+```bash
+npm install --save-dev prettier @eta-ejs/prettier-plugin
 ```
 
-After:
-```eta
-<% if (it.user) { %>
-<h1><%= it.user.name %></h1>
-<% } %>
-```
+Prettier config example:
 
-### EJS
-
-Before:
-```ejs
-<% posts.forEach((post) => { %>
-<li><%- post.title %></li>
-<% }) %>
-```
-
-After:
-```ejs
-<% posts.forEach((post) => { %>
-<li><%- post.title %></li>
-<% }) %>
+```json
+{
+  "plugins": ["@eta-ejs/prettier-plugin"]
+}
 ```
 
 ## Development
@@ -107,34 +116,11 @@ npm run lint
 npm run licenses:check
 ```
 
-## Website (GitHub Pages)
-
-```bash
-cd website
-npm install
-npm run dev
-```
-
-The live site is intended to be published at:
-`https://keyhan-a.github.io/eta-prettifier/`
-
 ## Release
 
 - VSIX packaging: `npm run package:extension`
-- Full release steps: `docs/RELEASE.md`
-- API integration docs for subscription: `docs/API_INTEGRATION.md`
-
-## Roadmap
-
-- Richer parser/printer coverage for complex mixed HTML/template blocks
-- Additional formatting controls for whitespace handling
-- Marketplace publish and semver release automation
-- Expanded fixture corpus from real-world template projects
-
-## Known Limitations
-
-- Formatter is intentionally conservative for safety in mixed template markup
-- Deep JS/HTML semantic reformatting inside template blocks is limited in MVP
+- Full release guide: `docs/RELEASE.md`
+- API integration doc: `docs/API_INTEGRATION.md`
 
 ## Contributing
 

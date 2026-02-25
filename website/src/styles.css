@@ -1,12 +1,14 @@
 :root {
   color-scheme: dark;
-  --bg: #0b1220;
-  --panel: #111b2e;
-  --text: #e5ecff;
-  --muted: #9aa8c7;
-  --accent: #60a5fa;
-  --ok: #10b981;
-  --error: #f87171;
+  --bg: #0d1117;
+  --bg-soft: #101822;
+  --panel: #141d2b;
+  --panel-2: #1a2435;
+  --text: #e6edf7;
+  --muted: #9fb0c8;
+  --brand: #56b6ff;
+  --brand-soft: #273d5c;
+  --line: #2b3a52;
 }
 
 * {
@@ -16,130 +18,163 @@
 body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(1200px 600px at 10% -10%, #17284a 0%, var(--bg) 45%);
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.55;
+  background:
+    radial-gradient(900px 520px at 8% -8%, #22324d 0%, transparent 55%),
+    radial-gradient(650px 380px at 92% -18%, #1e3852 0%, transparent 60%),
+    var(--bg);
 }
 
 a {
-  color: var(--accent);
+  color: var(--brand);
 }
 
-.wrap {
-  width: min(1040px, 92vw);
+.page {
+  width: min(1080px, 92vw);
   margin: 0 auto;
+  padding-bottom: 2.5rem;
 }
 
-header {
-  padding: 3rem 0 2rem;
+.hero {
+  padding: 2.25rem 0 1.1rem;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLinks a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.heroContent {
+  background: linear-gradient(165deg, rgba(26, 36, 53, 0.98), rgba(15, 22, 35, 0.94));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #8bc4ff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 h1 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  margin: 0 0 0.75rem;
+  margin: 0.4rem 0 0.8rem;
+  font-size: clamp(1.9rem, 3.7vw, 3rem);
 }
 
 .lead {
+  margin: 0;
+  max-width: 64ch;
   color: var(--muted);
-  max-width: 52rem;
+}
+
+.meta {
+  margin-top: 0.9rem;
 }
 
 .ctaRow {
+  margin-top: 1.2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  gap: 0.7rem;
 }
 
 .btn {
-  border: 1px solid #2f416a;
-  padding: 0.65rem 1rem;
-  border-radius: 10px;
-  background: #1a2a49;
-  color: var(--text);
   text-decoration: none;
+  border-radius: 10px;
+  padding: 0.62rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
   font-weight: 600;
 }
 
 .btn.primary {
-  background: var(--accent);
-  color: #071325;
+  background: var(--brand);
   border-color: transparent;
+  color: #082033;
 }
 
-section {
-  margin: 1.25rem 0;
+.panel {
+  margin-top: 1rem;
   padding: 1.2rem;
-  background: rgba(17, 27, 46, 0.92);
-  border: 1px solid #243557;
+  border: 1px solid var(--line);
   border-radius: 14px;
+  background: linear-gradient(160deg, rgba(20, 29, 43, 0.96), rgba(16, 24, 34, 0.96));
 }
 
 h2 {
-  margin-top: 0.2rem;
+  margin: 0 0 0.85rem;
 }
 
-ul {
-  padding-left: 1.2rem;
-}
-
-pre {
-  background: #081125;
-  padding: 0.9rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  border: 1px solid #203250;
+h3 {
+  margin: 0 0 0.5rem;
 }
 
 .grid2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 0.9rem;
+  gap: 0.85rem;
 }
 
-.feature {
-  padding: 0.8rem;
-  background: #0f1930;
-  border: 1px solid #233657;
+.card {
+  background: var(--bg-soft);
+  border: 1px solid #23334a;
+  border-radius: 12px;
+  padding: 0.9rem;
+}
+
+ul,
+ol {
+  margin: 0.5rem 0 0.2rem;
+  padding-left: 1.2rem;
+}
+
+pre {
+  margin: 0.6rem 0 0;
   border-radius: 10px;
+  border: 1px solid #24364f;
+  background: #0a111a;
+  padding: 0.9rem;
+  overflow-x: auto;
 }
 
-.subscribeForm {
-  display: grid;
-  gap: 0.65rem;
-  max-width: 520px;
-}
-
-.subscribeForm input[type="email"],
-.subscribeForm input[type="text"] {
-  width: 100%;
-  padding: 0.65rem 0.7rem;
-  border-radius: 8px;
-  border: 1px solid #30466f;
-  background: #081125;
-  color: var(--text);
-}
-
-.checkboxRow {
-  display: flex;
-  gap: 0.5rem;
-  align-items: flex-start;
-  color: var(--muted);
-}
-
-.status {
-  font-size: 0.95rem;
-}
-
-.status.ok {
-  color: var(--ok);
-}
-
-.status.error {
-  color: var(--error);
+code {
+  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.94em;
 }
 
 footer {
-  margin: 2rem 0 3rem;
+  margin-top: 1.5rem;
   color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .navBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

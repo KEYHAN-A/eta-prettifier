@@ -1,8 +1,8 @@
 {
   "name": "eta-ejs-prettifier",
   "displayName": "ETA/EJS Prettifier",
-  "description": "Format ETA and EJS templates with Prettier.",
-  "version": "0.1.0",
+  "description": "ETA/EJS formatter extension by KEYHAN. GitHub: https://github.com/KEYHAN-A/eta-prettifier | Website: https://keyhan-a.github.io/eta-prettifier/",
+  "version": "1.0.0",
   "publisher": "eta-ejs",
   "license": "MIT",
   "type": "module",
@@ -18,7 +18,8 @@
     "vscode": "^1.96.0"
   },
   "categories": [
-    "Formatters"
+    "Formatters",
+    "Programming Languages"
   ],
   "activationEvents": [
     "onLanguage:eta",
@@ -50,6 +51,32 @@
         "configuration": "./language-configuration.json"
       }
     ],
+    "grammars": [
+      {
+        "language": "ejs",
+        "scopeName": "text.html.ejs",
+        "path": "./syntaxes/ejs.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.ejs": "javascript"
+        }
+      },
+      {
+        "language": "eta",
+        "scopeName": "text.html.eta",
+        "path": "./syntaxes/eta.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.eta": "javascript"
+        }
+      }
+    ],
+    "configurationDefaults": {
+      "[ejs]": {
+        "editor.defaultFormatter": "eta-ejs.eta-ejs-prettifier"
+      },
+      "[eta]": {
+        "editor.defaultFormatter": "eta-ejs.eta-ejs-prettifier"
+      }
+    },
     "configuration": {
       "title": "ETA/EJS Prettifier",
       "properties": {
@@ -82,14 +109,14 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && node ./scripts/copy-runtime-assets.mjs",
     "lint": "tsc -p tsconfig.json --noEmit",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "package": "npm run build && npx @vscode/vsce package --no-dependencies"
   },
   "dependencies": {
-    "@eta-ejs/prettier-plugin": "0.1.0",
+    "@eta-ejs/prettier-plugin": "1.0.0",
     "prettier": "^3.6.2"
   },
   "devDependencies": {
