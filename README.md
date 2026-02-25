@@ -10,9 +10,8 @@ Current release: **v1.0.0**
 VSIX asset: `eta-ejs-prettifier-1.0.0.vsix`  
 Download: [eta-ejs-prettifier-1.0.0.vsix](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix)
 
-## Project Identity
+## Project Links
 
-- Extension developer: **KEYHAN**
 - GitHub repository: `https://github.com/KEYHAN-A/eta-prettifier`
 - Website: `https://keyhan-a.github.io/eta-prettifier/`
 
@@ -32,12 +31,15 @@ Download: [eta-ejs-prettifier-1.0.0.vsix](https://github.com/KEYHAN-A/eta-pretti
 
 ## Complete Extension Guide
 
-### 1) Install (VSIX)
+### 1) Install
 
-Option A: download release VSIX  
+Option A (recommended): VS Code Marketplace  
+[ETA/EJS Prettifier on Marketplace](https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier)
+
+Option B: download release VSIX  
 [v1.0.0 VSIX](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix)
 
-Option B: build locally
+Option C: build locally
 
 ```bash
 npm install

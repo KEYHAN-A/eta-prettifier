@@ -24,13 +24,10 @@ app.innerHTML = `
           ETA-inspired, clean formatting workflow for template projects. Includes syntax highlighting,
           document/selection formatting, and a safe fallback behavior for unbalanced selected tags.
         </p>
-        <p class="meta">
-          Extension developer: <strong>KEYHAN</strong>
-        </p>
         <div class="ctaRow">
-          <a class="btn primary" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix">Download VSIX v1.0.0</a>
+          <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install from VS Code Marketplace</a>
+          <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix">Download VSIX v1.0.0</a>
           <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier">GitHub Repository</a>
-          <a class="btn" href="https://keyhan-a.github.io/eta-prettifier/">Website</a>
         </div>
       </div>
     </header>
@@ -41,8 +38,8 @@ app.innerHTML = `
         <article class="card">
           <h3>Install</h3>
           <ol>
-            <li>Download <code>eta-ejs-prettifier-1.0.0.vsix</code> from GitHub release.</li>
-            <li>VS Code -> Extensions -> menu -> <code>Install from VSIX...</code>.</li>
+            <li>Install from VS Code Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">eta-ejs-prettifier.eta-ejs-prettifier</a>.</li>
+            <li>Alternative: install <code>eta-ejs-prettifier-1.0.0.vsix</code> from GitHub release via <code>Install from VSIX...</code>.</li>
             <li>Open a <code>.eta</code> or <code>.ejs</code> file and run <code>Format Document</code>.</li>
           </ol>
           <p>Local package command: <code>npm run package:extension</code>.</p>
@@ -104,7 +101,7 @@ app.innerHTML = `
     </section>
 
     <footer>
-      Built and maintained by KEYHAN. MIT licensed open-source project.
+      MIT licensed open-source project. <span class="credit">Extension developer: KEYHAN</span>
     </footer>
   </div>
 `;
