@@ -3,7 +3,20 @@
   "displayName": "ETA/EJS Prettifier",
   "description": "ETA/EJS formatter extension by KEYHAN. GitHub: https://github.com/KEYHAN-A/eta-prettifier | Website: https://keyhan-a.github.io/eta-prettifier/",
   "version": "1.0.0",
-  "publisher": "eta-ejs",
+  "publisher": "eta-ejs-prettifier",
+  "keywords": [
+    "eta",
+    "ejs",
+    "template",
+    "formatter",
+    "prettier",
+    "vscode"
+  ],
+  "galleryBanner": {
+    "color": "#101822",
+    "theme": "dark"
+  },
+  "markdown": "github",
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -71,10 +84,10 @@
     ],
     "configurationDefaults": {
       "[ejs]": {
-        "editor.defaultFormatter": "eta-ejs.eta-ejs-prettifier"
+        "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
       },
       "[eta]": {
-        "editor.defaultFormatter": "eta-ejs.eta-ejs-prettifier"
+        "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
       }
     },
     "configuration": {
@@ -113,7 +126,8 @@
     "lint": "tsc -p tsconfig.json --noEmit",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "package": "npm run build && npx @vscode/vsce package --no-dependencies"
+    "package": "npm run build && npx @vscode/vsce package --no-dependencies",
+    "publish:marketplace": "npm run build && npx @vscode/vsce publish --no-dependencies"
   },
   "dependencies": {
     "@eta-ejs/prettier-plugin": "1.0.0",

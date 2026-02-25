@@ -60,4 +60,35 @@ Website deploys with `.github/workflows/deploy-pages.yml` on `main`.
 
 ## Marketplace Publish (Later)
 
-When ready, publish with `vsce` using your publisher account and PAT with Marketplace scopes.
+### One-Time Manual Setup
+
+1. Create or verify publisher at `https://marketplace.visualstudio.com/manage`:
+   - Publisher ID must match extension `publisher` in `packages/vscode-eta-ejs-formatter/package.json` (`eta-ejs-prettifier`).
+2. Create Azure DevOps PAT with Marketplace publish/manage scope.
+3. Add repository secret:
+   - GitHub -> Settings -> Secrets and variables -> Actions -> New repository secret
+   - Name: `VSCE_PAT`
+   - Value: your Marketplace PAT
+
+### Publish Paths
+
+Option A: GitHub Actions (recommended)
+
+- Trigger workflow: `.github/workflows/publish-marketplace.yml`
+- Manual dispatch input `version` must match extension package version.
+- Or publish automatically when a GitHub Release is marked **published**.
+
+Option B: Local publish
+
+```bash
+cd packages/vscode-eta-ejs-formatter
+npx @vscode/vsce login eta-ejs-prettifier
+npm run publish:marketplace
+```
+
+### Verify Listing
+
+After publish succeeds, check:
+
+- Marketplace listing:
+  `https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier`
