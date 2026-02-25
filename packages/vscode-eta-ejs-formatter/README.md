@@ -2,7 +2,6 @@
 
 Format Eta and EJS template files in VS Code with stable, predictable output.
 
-- Extension developer: **KEYHAN**
 - GitHub: https://github.com/KEYHAN-A/eta-prettifier
 - Website: https://keyhan-a.github.io/eta-prettifier/
 

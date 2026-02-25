@@ -172,6 +172,10 @@ footer {
   color: var(--muted);
 }
 
+.credit {
+  opacity: 0.8;
+}
+
 @media (max-width: 640px) {
   .navBar {
     flex-direction: column;

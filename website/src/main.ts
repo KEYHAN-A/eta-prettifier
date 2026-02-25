@@ -19,14 +19,14 @@ app.innerHTML = `
       </nav>
       <div class="heroContent">
         <p class="eyebrow">Stable release</p>
-        <h1>ETA/EJS Prettifier v1.0.0</h1>
+        <h1>ETA/EJS Prettifier v1.1.0</h1>
         <p class="lead">
           ETA-inspired, clean formatting workflow for template projects. Includes syntax highlighting,
           document/selection formatting, and a safe fallback behavior for unbalanced selected tags.
         </p>
         <div class="ctaRow">
           <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install from VS Code Marketplace</a>
-          <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix">Download VSIX v1.0.0</a>
+          <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">Download VSIX v1.1.0</a>
           <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier">GitHub Repository</a>
         </div>
       </div>
@@ -39,7 +39,7 @@ app.innerHTML = `
           <h3>Install</h3>
           <ol>
             <li>Install from VS Code Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">eta-ejs-prettifier.eta-ejs-prettifier</a>.</li>
-            <li>Alternative: install <code>eta-ejs-prettifier-1.0.0.vsix</code> from GitHub release via <code>Install from VSIX...</code>.</li>
+            <li>Alternative: install <code>eta-ejs-prettifier-1.1.0.vsix</code> from GitHub release via <code>Install from VSIX...</code>.</li>
             <li>Open a <code>.eta</code> or <code>.ejs</code> file and run <code>Format Document</code>.</li>
           </ol>
           <p>Local package command: <code>npm run package:extension</code>.</p>
@@ -66,6 +66,19 @@ app.innerHTML = `
   "etaEjsPrettifier.semi": true,
   "etaEjsPrettifier.singleQuote": false
 }</code></pre>
+      <p>Fallback association/setup (if VS Code opens <code>.eta</code> as plain text):</p>
+      <pre><code>{
+  "files.associations": {
+    "*.eta": "eta",
+    "*.ejs": "ejs"
+  },
+  "[eta]": {
+    "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
+  },
+  "[ejs]": {
+    "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
+  }
+}</code></pre>
     </section>
 
     <section id="troubleshooting" class="panel">
@@ -77,6 +90,7 @@ app.innerHTML = `
             <li>Confirm file extension is <code>.eta</code> or <code>.ejs</code>.</li>
             <li>Set language mode to <code>Eta</code> or <code>EJS</code>.</li>
             <li>Run <code>Developer: Reload Window</code>.</li>
+            <li>If needed, add <code>"*.eta": "eta"</code> in <code>files.associations</code>.</li>
           </ul>
         </article>
         <article class="card">
@@ -90,11 +104,25 @@ app.innerHTML = `
       </div>
     </section>
 
+    <section class="panel">
+      <h2>IntelliJ Products (Prettier path)</h2>
+      <p>
+        For IntelliJ IDEA, WebStorm, and PhpStorm, use the Prettier integration with
+        <code>@eta-ejs/prettier-plugin</code>.
+      </p>
+      <ol>
+        <li>Install: <code>npm install --save-dev prettier @eta-ejs/prettier-plugin</code>.</li>
+        <li>In IDE settings, point Prettier package to project <code>node_modules/prettier</code>.</li>
+        <li>Add plugin in Prettier config: <code>"plugins": ["@eta-ejs/prettier-plugin"]</code>.</li>
+        <li>If <code>.eta</code> parsing is not picked up, map <code>*.eta</code> to an HTML-like file type.</li>
+      </ol>
+    </section>
+
     <section id="release" class="panel">
       <h2>Release Links</h2>
       <ul>
-        <li>Version: <strong>v1.0.0</strong></li>
-        <li>VSIX: <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.0.0/eta-ejs-prettifier-1.0.0.vsix">eta-ejs-prettifier-1.0.0.vsix</a></li>
+        <li>Version: <strong>v1.1.0</strong></li>
+        <li>VSIX: <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">eta-ejs-prettifier-1.1.0.vsix</a></li>
         <li>Repository: <a href="https://github.com/KEYHAN-A/eta-prettifier">github.com/KEYHAN-A/eta-prettifier</a></li>
         <li>Website: <a href="https://keyhan-a.github.io/eta-prettifier/">keyhan-a.github.io/eta-prettifier</a></li>
       </ul>

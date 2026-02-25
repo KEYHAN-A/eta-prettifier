@@ -1,8 +1,9 @@
 {
   "name": "eta-ejs-prettifier",
   "displayName": "ETA/EJS Prettifier",
-  "description": "ETA/EJS formatter extension by KEYHAN. GitHub: https://github.com/KEYHAN-A/eta-prettifier | Website: https://keyhan-a.github.io/eta-prettifier/",
-  "version": "1.0.0",
+  "icon": "icon.png",
+  "description": "Format ETA and EJS templates in VS Code with reliable, deterministic output.",
+  "version": "1.1.0",
   "publisher": "eta-ejs-prettifier",
   "keywords": [
     "eta",
@@ -130,7 +131,7 @@
     "publish:marketplace": "npm run build && npx @vscode/vsce publish --no-dependencies"
   },
   "dependencies": {
-    "@eta-ejs/prettier-plugin": "1.0.0",
+    "@eta-ejs/prettier-plugin": "1.1.0",
     "prettier": "^3.6.2"
   },
   "devDependencies": {
