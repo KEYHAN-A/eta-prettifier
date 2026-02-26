@@ -2,6 +2,7 @@
 
 Format Eta and EJS template files in VS Code with stable, predictable output.
 
+- Marketplace: https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier
 - GitHub: https://github.com/KEYHAN-A/eta-prettifier
 - Website: https://keyhan-a.github.io/eta-prettifier/
 
@@ -14,7 +15,7 @@ Format Eta and EJS template files in VS Code with stable, predictable output.
 
 ## Quick Start
 
-1. Install the extension.
+1. Install from Marketplace (recommended).
 2. Open an `.eta` or `.ejs` file.
 3. Run **Format Document**.
 
@@ -35,3 +36,4 @@ Settings namespace: `etaEjsPrettifier.*`
 - If the file appears plain text, verify language mode is `Eta` or `EJS`.
 - If formatting does not run, use **Format Document With...** and select this extension.
 - Reload VS Code window after updates: **Developer: Reload Window**.
+- If needed, set fallback association in settings: `"files.associations": { "*.eta": "eta" }`.

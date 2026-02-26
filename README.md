@@ -1,45 +1,31 @@
 # ETA/EJS Prettifier
 
+<img src="packages/vscode-eta-ejs-formatter/icon.png" alt="ETA/EJS icon" width="28" height="28" />
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![CI](https://github.com/KEYHAN-A/eta-prettifier/actions/workflows/ci.yml/badge.svg)](https://github.com/KEYHAN-A/eta-prettifier/actions/workflows/ci.yml)
 [![Website](https://img.shields.io/badge/docs-GitHub%20Pages-2563eb)](https://keyhan-a.github.io/eta-prettifier/)
 
-Formatter tooling for Eta and EJS template files, shipped as a VS Code extension and a reusable Prettier plugin.
+Formatter tooling for Eta and EJS templates, delivered as a VS Code extension and a reusable Prettier plugin.
 
 Current release: **v1.1.0**  
-VSIX asset: `eta-ejs-prettifier-1.1.0.vsix`  
-Download: [eta-ejs-prettifier-1.1.0.vsix](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix)
+VSIX asset: `eta-ejs-prettifier-1.1.0.vsix`
 
-## Project Links
+## Links
 
-- GitHub repository: `https://github.com/KEYHAN-A/eta-prettifier`
+- Marketplace: `https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier`
+- GitHub: `https://github.com/KEYHAN-A/eta-prettifier`
 - Website: `https://keyhan-a.github.io/eta-prettifier/`
+- Main ETA website: `https://eta.js.org/`
+- VSIX download: `https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix`
 
-## What This Extension Does
+## Install
 
-- Formats `.eta` and `.ejs` with deterministic output
-- Supports **Format Document** and **Format Selection**
-- Falls back to full document formatting when selection tags are unbalanced
-- Adds language registration for Eta/EJS and syntax grammar support
-- Sets default formatter for `eta` and `ejs` language modes
-
-## Packages
-
-- `packages/vscode-eta-ejs-formatter` -> VS Code extension `eta-ejs-prettifier`
-- `packages/prettier-plugin-eta-ejs` -> NPM plugin `@eta-ejs/prettier-plugin`
-- `website/` -> project docs and release guide website
-
-## Complete Extension Guide
-
-### 1) Install
-
-Option A (recommended): VS Code Marketplace  
-[ETA/EJS Prettifier on Marketplace](https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier)
-
-Option B: download release VSIX  
-[v1.1.0 VSIX](https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix)
-
-Option C: build locally
+1. Install from VS Code Marketplace (recommended):  
+   `eta-ejs-prettifier.eta-ejs-prettifier`
+2. Or install the release VSIX:  
+   `eta-ejs-prettifier-1.1.0.vsix`
+3. Or build locally:
 
 ```bash
 npm install
@@ -49,26 +35,21 @@ npm run package:extension
 Generated file:
 `packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-1.1.0.vsix`
 
-Then in VS Code:
-1. Open Extensions panel
-2. Menu (`...`) -> `Install from VSIX...`
-3. Select the VSIX file
+## First Run
 
-### 2) First-Run Setup
+1. Open a `.eta` or `.ejs` file.
+2. Confirm language mode is `Eta` or `EJS`.
+3. Run `Format Document`.
+4. If prompted, choose `ETA/EJS Prettifier` as default formatter.
 
-1. Open an `.eta` or `.ejs` file
-2. Confirm language mode is `Eta` or `EJS` in the status bar
-3. Run `Format Document`
+## Features
 
-If prompted, select `ETA/EJS Prettifier` as formatter.
+- Deterministic formatting for `.eta` and `.ejs`
+- `Format Document` and `Format Selection`
+- Safe full-document fallback when selected tags are unbalanced
+- Syntax grammar support for Eta/EJS scriptlet blocks
 
-### 3) Formatting Behavior
-
-- **Format Document**: formats the entire file
-- **Format Selection**: formats only selection when tags are balanced
-- **Selection fallback**: if selected template tags are unbalanced, extension safely formats whole document
-
-### 4) Configuration
+## Configuration
 
 Settings namespace: `etaEjsPrettifier.*`
 
@@ -80,69 +61,62 @@ Settings namespace: `etaEjsPrettifier.*`
 | `etaEjsPrettifier.semi` | boolean | `true` | Keep semicolons where applicable |
 | `etaEjsPrettifier.singleQuote` | boolean | `false` | Prefer single quotes where applicable |
 
-### 5) Troubleshooting
+Fallback association/setup (if `.eta` opens as plain text):
 
-If file appears plain white text:
-- ensure file extension is `.eta` or `.ejs`
-- check VS Code language mode is `Eta` or `EJS`, not `Plain Text` or `HTML`
-- reload window: `Developer: Reload Window`
-- if needed, force association in user/workspace settings:
-  ```json
-  {
-    "files.associations": {
-      "*.eta": "eta",
-      "*.ejs": "ejs"
-    },
-    "[eta]": {
-      "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
-    },
-    "[ejs]": {
-      "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
-    }
+```json
+{
+  "files.associations": {
+    "*.eta": "eta",
+    "*.ejs": "ejs"
+  },
+  "[eta]": {
+    "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
+  },
+  "[ejs]": {
+    "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
   }
-  ```
+}
+```
 
-If formatting does not run:
-- run `Format Document With...` and choose `ETA/EJS Prettifier`
-- verify no conflicting formatter is forced for `[eta]` / `[ejs]`
-- check `Output -> Log (Extension Host)` for runtime errors
+## Troubleshooting
 
-### 6) IntelliJ Products (Prettier path)
+- `.eta` looks plain text:
+  - verify file extension is `.eta`
+  - set language mode to `Eta`
+  - run `Developer: Reload Window`
+- Formatter does not run:
+  - use `Format Document With...` and select this extension
+  - check formatter conflicts for `[eta]` / `[ejs]`
+  - inspect `Output -> Log (Extension Host)` for errors
 
-This project does not ship a native JetBrains plugin yet. Use the Prettier integration path:
+## IntelliJ Products (Prettier Path)
 
-1. Install project dependencies:
-   ```bash
-   npm install --save-dev prettier @eta-ejs/prettier-plugin
-   ```
-2. In IntelliJ/WebStorm/PhpStorm:
-   - enable the bundled Prettier integration
-   - set Prettier package to your project `node_modules/prettier`
-3. Ensure Prettier config includes:
-   ```json
-   {
-     "plugins": ["@eta-ejs/prettier-plugin"]
-   }
-   ```
-4. If `.eta` is not recognized properly, map `*.eta` to an HTML-like file type in IDE file type settings.
-5. If plugin discovery is limited in a monorepo, use a File Watcher or external tool command:
-   - `npx prettier --write --plugin @eta-ejs/prettier-plugin <file>`
+This project does not ship a native JetBrains plugin yet. For IntelliJ IDEA/WebStorm/PhpStorm:
 
-## Prettier Plugin Usage
-
-Install:
+1. Install dependencies:
 
 ```bash
 npm install --save-dev prettier @eta-ejs/prettier-plugin
 ```
 
-Prettier config example:
+2. In IDE settings, use project `node_modules/prettier`.
+3. Ensure Prettier config includes:
 
 ```json
 {
   "plugins": ["@eta-ejs/prettier-plugin"]
 }
 ```
+
+4. If needed, map `*.eta` to an HTML-like file type.
+5. Fallback external tool command:
+   `npx prettier --write --plugin @eta-ejs/prettier-plugin <file>`
+
+## Packages
+
+- `packages/vscode-eta-ejs-formatter` -> VS Code extension
+- `packages/prettier-plugin-eta-ejs` -> Prettier plugin
+- `website/` -> docs site
 
 ## Development
 
@@ -156,17 +130,16 @@ npm run licenses:check
 
 ## Release
 
-- VSIX packaging: `npm run package:extension`
+- VSIX package: `npm run package:extension`
 - Full release guide: `docs/RELEASE.md`
-- API integration doc: `docs/API_INTEGRATION.md`
 
 ## Contributing
 
-Contributions are welcome. See `CONTRIBUTING.md`.
+See `CONTRIBUTING.md`.
 
 ## Security
 
-Report vulnerabilities responsibly via `SECURITY.md`.
+See `SECURITY.md`.
 
 ## License
 
