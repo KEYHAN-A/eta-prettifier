@@ -1,6 +1,6 @@
 {
   "name": "@eta-ejs/prettier-plugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Prettier plugin for ETA and EJS templates.",
   "license": "MIT",
   "type": "module",

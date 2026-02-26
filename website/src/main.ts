@@ -6,7 +6,7 @@ if (!app) {
   throw new Error("App root not found.");
 }
 
-const version = "v1.1.0";
+const version = "v1.2.0";
 
 app.innerHTML = `
   <div class="page">
@@ -24,24 +24,22 @@ app.innerHTML = `
       </nav>
 
       <section class="hero">
-        <div class="heroMain">
-          <p class="eyebrow">${version}</p>
-          <h1>Formatter confidence for Eta and EJS templates</h1>
-          <p class="lead">
-            Keep mixed template files readable with stable output, predictable options, and an
-            install flow that takes minutes.
-          </p>
-          <div class="ctaRow">
-            <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install Extension</a>
-            <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier">View Source</a>
-          </div>
-          <ul class="heroMeta">
-            <li>MIT licensed</li>
-            <li>VS Code extension + Prettier plugin</li>
-            <li>Built for Eta and EJS workflows</li>
-          </ul>
+        <p class="eyebrow">${version}</p>
+        <h1>Formatter confidence for Eta and EJS templates</h1>
+        <p class="lead">
+          Keep mixed template files readable with stable output, predictable options, and an
+          install flow that takes minutes.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install Extension</a>
+          <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier">View Source</a>
         </div>
-        <div class="heroPanel">
+        <ul class="heroMeta">
+          <li>MIT licensed</li>
+          <li>VS Code extension + Prettier plugin</li>
+          <li>Built for Eta and EJS workflows</li>
+        </ul>
+        <article class="card quickStart">
           <h3>Quick Start</h3>
           <ol class="stepList">
             <li>Install from Marketplace.</li>
@@ -49,24 +47,17 @@ app.innerHTML = `
             <li>Run <code>Format Document</code>.</li>
             <li>Set this extension as default formatter when prompted.</li>
           </ol>
-          <a class="inlineLink" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">Need offline setup? Download VSIX.</a>
-        </div>
+          <a class="inlineLink" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix">Need offline setup? Download VSIX.</a>
+        </article>
       </section>
     </header>
 
-    <section class="trustStrip">
-      <article class="trustItem">
-        <p class="trustLabel">Output style</p>
-        <p>Predictable and low-noise formatting</p>
-      </article>
-      <article class="trustItem">
-        <p class="trustLabel">Editor support</p>
-        <p>VS Code first, with Prettier plugin support</p>
-      </article>
-      <article class="trustItem">
-        <p class="trustLabel">Maintained in public</p>
-        <p>Open issues, releases, and changelog on GitHub</p>
-      </article>
+    <section class="valuePoints panel">
+      <ul>
+        <li><strong>Output style:</strong> Predictable and low-noise formatting.</li>
+        <li><strong>Editor support:</strong> VS Code first, with Prettier plugin support.</li>
+        <li><strong>Maintained in public:</strong> Open issues, releases, and changelog on GitHub.</li>
+      </ul>
     </section>
 
     <section id="install" class="panel">
@@ -74,7 +65,7 @@ app.innerHTML = `
         <p class="eyebrow">Installation</p>
         <h2>Choose your install path</h2>
       </div>
-      <div class="grid3 installGrid">
+      <div class="stack">
         <article class="card">
           <h3>Marketplace</h3>
           <p>Recommended for normal use and updates.</p>
@@ -83,7 +74,7 @@ app.innerHTML = `
         <article class="card">
           <h3>VSIX</h3>
           <p>Use release asset for offline/manual install.</p>
-          <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">Download eta-ejs-prettifier-1.1.0.vsix</a>
+          <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix">Download eta-ejs-prettifier-1.2.0.vsix</a>
         </article>
         <article class="card">
           <h3>Local Build</h3>
@@ -99,7 +90,7 @@ npm run package:extension</code></pre>
         <p class="eyebrow">Configuration</p>
         <h2>Drop-in settings for stable formatting</h2>
       </div>
-      <div class="grid2">
+      <div class="stack">
         <article class="card">
           <h3>Formatter Settings</h3>
           <pre><code>{
@@ -133,7 +124,7 @@ npm run package:extension</code></pre>
         <p class="eyebrow">Troubleshooting</p>
         <h2>Fix common setup issues quickly</h2>
       </div>
-      <div class="grid2">
+      <div class="stack">
         <article class="card">
           <h3>.eta appears as plain text</h3>
           <ul>
@@ -186,7 +177,7 @@ npm run package:extension</code></pre>
       </p>
       <div class="ctaRow">
         <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install Extension</a>
-        <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">Download VSIX</a>
+        <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix">Download VSIX</a>
       </div>
     </section>
 

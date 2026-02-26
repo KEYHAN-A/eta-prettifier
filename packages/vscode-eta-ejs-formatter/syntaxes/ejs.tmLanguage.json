@@ -38,7 +38,11 @@
           "name": "punctuation.section.embedded.end.ejs"
         }
       },
-      "contentName": "source.js"
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
     },
     "ejsOutputRaw": {
       "name": "meta.embedded.block.ejs",
@@ -54,7 +58,11 @@
           "name": "punctuation.section.embedded.end.ejs"
         }
       },
-      "contentName": "source.js"
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
     },
     "ejsScriptlet": {
       "name": "meta.embedded.block.ejs",
@@ -70,7 +78,11 @@
           "name": "punctuation.section.embedded.end.ejs"
         }
       },
-      "contentName": "source.js"
+      "patterns": [
+        {
+          "include": "source.js"
+        }
+      ]
     }
   }
 }

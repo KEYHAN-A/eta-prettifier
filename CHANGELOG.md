@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0
+- Simplified the website to a calmer single-column-first flow with reduced visual crowding.
+- Fixed embedded JavaScript syntax highlighting in both `.eta` and `.ejs` scriptlet/output blocks.
+- Updated release metadata, versioned links, and package versions for `v1.2.0`.
+
 ## 1.1.0
 - Updated README and website installation flow to prioritize VS Code Marketplace as the primary option.
 - Added IntelliJ products integration guidance via Prettier plugin workflow.

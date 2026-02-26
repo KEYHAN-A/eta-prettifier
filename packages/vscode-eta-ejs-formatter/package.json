@@ -3,7 +3,7 @@
   "displayName": "ETA/EJS Prettifier",
   "icon": "icon.png",
   "description": "Format ETA and EJS templates in VS Code with reliable, deterministic output.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "eta-ejs-prettifier",
   "keywords": [
     "eta",
@@ -131,7 +131,7 @@
     "publish:marketplace": "npm run build && npx @vscode/vsce publish --no-dependencies"
   },
   "dependencies": {
-    "@eta-ejs/prettier-plugin": "1.1.0",
+    "@eta-ejs/prettier-plugin": "1.2.0",
     "prettier": "^3.6.2"
   },
   "devDependencies": {

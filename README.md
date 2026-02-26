@@ -8,8 +8,8 @@
 
 Formatter tooling for Eta and EJS templates, delivered as a VS Code extension and a reusable Prettier plugin.
 
-Current release: **v1.1.0**  
-VSIX asset: `eta-ejs-prettifier-1.1.0.vsix`
+Current release: **v1.2.0**  
+VSIX asset: `eta-ejs-prettifier-1.2.0.vsix`
 
 ## Links
 
@@ -17,14 +17,14 @@ VSIX asset: `eta-ejs-prettifier-1.1.0.vsix`
 - GitHub: `https://github.com/KEYHAN-A/eta-prettifier`
 - Website: `https://keyhan-a.github.io/eta-prettifier/`
 - Main ETA website: `https://eta.js.org/`
-- VSIX download: `https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix`
+- VSIX download: `https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix`
 
 ## Install
 
 1. Install from VS Code Marketplace (recommended):  
    `eta-ejs-prettifier.eta-ejs-prettifier`
 2. Or install the release VSIX:  
-   `eta-ejs-prettifier-1.1.0.vsix`
+   `eta-ejs-prettifier-1.2.0.vsix`
 3. Or build locally:
 
 ```bash
@@ -33,7 +33,7 @@ npm run package:extension
 ```
 
 Generated file:
-`packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-1.1.0.vsix`
+`packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-1.2.0.vsix`
 
 ## First Run
 
