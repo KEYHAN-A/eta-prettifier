@@ -36,7 +36,7 @@ a {
 }
 
 .page {
-  width: min(820px, 92vw);
+  width: min(1360px, 96vw);
   margin: 0 auto;
   padding: 0 0 3rem;
 }
@@ -282,7 +282,7 @@ footer {
 
 @media (max-width: 900px) {
   .page {
-    width: min(760px, 92vw);
+    width: 94vw;
   }
 }
 
