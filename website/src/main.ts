@@ -12,68 +12,74 @@ app.innerHTML = `
       <nav class="navBar">
         <a class="brand" href="https://keyhan-a.github.io/eta-prettifier/">ETA/EJS Prettifier</a>
         <div class="navLinks">
-          <a href="#guide">Guide</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#release">Release</a>
+          <a href="#install">Install</a>
+          <a href="#config">Config</a>
+          <a href="#help">Help</a>
         </div>
       </nav>
-      <div class="heroContent">
-        <p class="eyebrow">Stable release</p>
-        <h1>ETA/EJS Prettifier v1.1.0</h1>
-        <p class="lead">
-          Formatter tooling for Eta and EJS templates with predictable output, language registration,
-          and safe selection fallback behavior.
-        </p>
-        <div class="ctaRow">
-          <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install from VS Code Marketplace</a>
-          <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">Download VSIX v1.1.0</a>
-          <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier">GitHub</a>
+      <div class="heroSplit">
+        <div class="heroMain">
+          <p class="eyebrow">v1.1.0</p>
+          <h1>Minimal formatter workflow for Eta and EJS</h1>
+          <p class="lead">
+            Fast setup, predictable output, and safe formatting behavior for mixed template files.
+          </p>
+          <div class="ctaRow">
+            <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install from Marketplace</a>
+            <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">Download VSIX</a>
+            <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier">GitHub</a>
+          </div>
         </div>
+        <aside class="quickCard">
+          <h3>Quick Start</h3>
+          <ol>
+            <li>Install extension.</li>
+            <li>Open an <code>.eta</code> or <code>.ejs</code> file.</li>
+            <li>Run <code>Format Document</code>.</li>
+            <li>Set default formatter if prompted.</li>
+          </ol>
+        </aside>
       </div>
     </header>
 
-    <section id="guide" class="panel">
-      <h2>Install</h2>
-      <div class="grid2">
+    <section id="install" class="panel">
+      <h2>Install Paths</h2>
+      <div class="grid3">
         <article class="card">
-          <h3>VS Code</h3>
-          <ol>
-            <li>Install from VS Code Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">eta-ejs-prettifier.eta-ejs-prettifier</a>.</li>
-            <li>Alternative: install <code>eta-ejs-prettifier-1.1.0.vsix</code> from GitHub release via <code>Install from VSIX...</code>.</li>
-            <li>Open a <code>.eta</code> or <code>.ejs</code> file and run <code>Format Document</code>.</li>
-          </ol>
-          <p>Local package command: <code>npm run package:extension</code>.</p>
+          <h3>Marketplace</h3>
+          <p>Recommended for normal use and updates.</p>
+          <a href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">eta-ejs-prettifier.eta-ejs-prettifier</a>
         </article>
         <article class="card">
-          <h3>First Run</h3>
-          <ol>
-            <li>Confirm language mode is <code>Eta</code> or <code>EJS</code>.</li>
-            <li>Run <code>Format Document</code>.</li>
-            <li>If prompted, set <code>ETA/EJS Prettifier</code> as default formatter.</li>
-          </ol>
-          <h3>Features</h3>
-          <ul>
-            <li>Formatting for <code>.eta</code> and <code>.ejs</code>.</li>
-            <li>Format Document and Format Selection support.</li>
-            <li>Selection fallback to document formatting when tags are unbalanced.</li>
-            <li>Syntax grammar support for template scriptlet tokens.</li>
-          </ul>
+          <h3>VSIX</h3>
+          <p>Use release asset for offline/manual install.</p>
+          <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">eta-ejs-prettifier-1.1.0.vsix</a>
+        </article>
+        <article class="card">
+          <h3>Local Build</h3>
+          <p>Build your own package for testing.</p>
+          <pre><code>npm install
+npm run package:extension</code></pre>
         </article>
       </div>
     </section>
 
-    <section class="panel">
+    <section id="config" class="panel">
       <h2>Configuration</h2>
-      <p>Settings namespace: <code>etaEjsPrettifier.*</code></p>
-      <pre><code>{
+      <div class="grid2">
+        <article class="card">
+          <h3>Formatter Settings</h3>
+          <pre><code>{
   "etaEjsPrettifier.printWidth": 100,
   "etaEjsPrettifier.tabWidth": 2,
   "etaEjsPrettifier.useTabs": false,
   "etaEjsPrettifier.semi": true,
   "etaEjsPrettifier.singleQuote": false
 }</code></pre>
-      <p>Fallback association/setup (if VS Code opens <code>.eta</code> as plain text):</p>
-      <pre><code>{
+        </article>
+        <article class="card">
+          <h3>Language Fallback</h3>
+          <pre><code>{
   "files.associations": {
     "*.eta": "eta",
     "*.ejs": "ejs"
@@ -85,54 +91,49 @@ app.innerHTML = `
     "editor.defaultFormatter": "eta-ejs-prettifier.eta-ejs-prettifier"
   }
 }</code></pre>
+        </article>
+      </div>
     </section>
 
-    <section id="troubleshooting" class="panel">
+    <section id="help" class="panel">
       <h2>Troubleshooting</h2>
       <div class="grid2">
         <article class="card">
-          <h3>File has no colors</h3>
+          <h3>.eta appears as plain text</h3>
           <ul>
-            <li>Confirm file extension is <code>.eta</code> or <code>.ejs</code>.</li>
-            <li>Set language mode to <code>Eta</code> or <code>EJS</code>.</li>
-            <li>Run <code>Developer: Reload Window</code>.</li>
-            <li>If needed, add <code>"*.eta": "eta"</code> in <code>files.associations</code>.</li>
+            <li>Confirm extension is <code>.eta</code>.</li>
+            <li>Set language mode to <code>Eta</code>.</li>
+            <li>Reload: <code>Developer: Reload Window</code>.</li>
+            <li>Add <code>"*.eta": "eta"</code> in <code>files.associations</code> if needed.</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Format does not run</h3>
+          <h3>Formatter does not run</h3>
           <ul>
-            <li>Use <code>Format Document With...</code> and select <code>ETA/EJS Prettifier</code>.</li>
-            <li>Check formatter conflicts in language-specific settings.</li>
-            <li>Inspect <code>Log (Extension Host)</code> output for errors.</li>
+            <li>Use <code>Format Document With...</code> and select this extension.</li>
+            <li>Check conflicting formatter settings for <code>[eta]</code>/<code>[ejs]</code>.</li>
+            <li>Review <code>Log (Extension Host)</code> output.</li>
           </ul>
         </article>
       </div>
     </section>
 
     <section class="panel">
-      <h2>IntelliJ Products (Prettier path)</h2>
+      <h2>JetBrains / IntelliJ</h2>
       <p>
-        For IntelliJ IDEA, WebStorm, and PhpStorm, use the Prettier integration with
-        <code>@eta-ejs/prettier-plugin</code>.
+        Use Prettier with <code>@eta-ejs/prettier-plugin</code>. Point IDE Prettier path to project
+        <code>node_modules/prettier</code>, and map <code>*.eta</code> to an HTML-like file type if needed.
       </p>
-      <ol>
-        <li>Install: <code>npm install --save-dev prettier @eta-ejs/prettier-plugin</code>.</li>
-        <li>In IDE settings, point Prettier package to project <code>node_modules/prettier</code>.</li>
-        <li>Add plugin in Prettier config: <code>"plugins": ["@eta-ejs/prettier-plugin"]</code>.</li>
-        <li>If <code>.eta</code> parsing is not picked up, map <code>*.eta</code> to an HTML-like file type.</li>
-      </ol>
+      <pre><code>npm install --save-dev prettier @eta-ejs/prettier-plugin</code></pre>
     </section>
 
     <section id="release" class="panel">
       <h2>Project Links</h2>
-      <ul>
-        <li>Version: <strong>v1.1.0</strong></li>
-        <li>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">eta-ejs-prettifier.eta-ejs-prettifier</a></li>
-        <li>VSIX: <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.1.0/eta-ejs-prettifier-1.1.0.vsix">eta-ejs-prettifier-1.1.0.vsix</a></li>
-        <li>Repository: <a href="https://github.com/KEYHAN-A/eta-prettifier">github.com/KEYHAN-A/eta-prettifier</a></li>
-        <li>Main ETA website: <a href="https://eta.js.org/">eta.js.org</a></li>
-        <li>Website: <a href="https://keyhan-a.github.io/eta-prettifier/">keyhan-a.github.io/eta-prettifier</a></li>
+      <ul class="linksList">
+        <li><strong>Version:</strong> v1.1.0</li>
+        <li><strong>Repository:</strong> <a href="https://github.com/KEYHAN-A/eta-prettifier">github.com/KEYHAN-A/eta-prettifier</a></li>
+        <li><strong>Main ETA website:</strong> <a href="https://eta.js.org/">eta.js.org</a></li>
+        <li><strong>Project website:</strong> <a href="https://keyhan-a.github.io/eta-prettifier/">keyhan-a.github.io/eta-prettifier</a></li>
       </ul>
     </section>
 
