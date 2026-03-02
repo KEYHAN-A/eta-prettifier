@@ -1,10 +1,9 @@
 <main>
-  <% if (it.user) { %>
-  <h1>Hello, <%= it.user.name %></h1>
+<% if (it.user) { %>
+  <h1>Hello,<%= it.user.name %></h1>
 
-
-  <%~ it.render('partials/stats', { user: it.user }) %>
-  <% } else { %>
+<%~ it.render('partials/stats', { user: it.user }) %>
+<% } else { %>
   <p>Please sign in.</p>
-  <% } %>
+<% } %>
 </main>

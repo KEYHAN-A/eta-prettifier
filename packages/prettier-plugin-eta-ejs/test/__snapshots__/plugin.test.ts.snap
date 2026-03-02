@@ -2,29 +2,29 @@
 
 exports[`prettier-plugin-eta-ejs > formats ejs fixture deterministically 1`] = `
 "<section>
-<% if (locals.posts?.length) { %>
-<%# post list %>
-  <ul>
-<% posts.forEach((post) => { %>
-      <li><%= post.title %></li>
-<% }) %>
-  </ul>
-<% } else { %>
-  <p>No posts</p>
-<% } %>
+  <% if (locals.posts?.length) { %>
+    <%# post list %>
+    <ul>
+      <% posts.forEach((post) => { %>
+        <li><%= post.title %></li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No posts</p>
+  <% } %>
 </section>
 "
 `;
 
 exports[`prettier-plugin-eta-ejs > formats eta fixture deterministically 1`] = `
 "<main>
-<% if (it.user) { %>
-  <h1>Hello,<%= it.user.name %></h1>
+  <% if (it.user) { %>
+    <h1>Hello,<%= it.user.name %></h1>
 
-<%~ it.render('partials/stats', { user: it.user }) %>
-<% } else { %>
-  <p>Please sign in.</p>
-<% } %>
+    <%~ it.render('partials/stats', { user: it.user }) %>
+  <% } else { %>
+    <p>Please sign in.</p>
+  <% } %>
 </main>
 "
 `;
