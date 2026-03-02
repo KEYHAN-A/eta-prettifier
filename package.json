@@ -1,6 +1,6 @@
 {
   "name": "eta-prettifier-monorepo",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "description": "Monorepo for ETA/EJS Prettier plugin and VS Code formatter extension.",
   "license": "MIT",

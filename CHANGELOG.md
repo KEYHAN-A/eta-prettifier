@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+- Bumped monorepo, extension, plugin, and site package versions to `1.2.1`.
+- Updated release and website metadata links to point to `v1.2.1` VSIX assets.
+
 ## 1.2.0
 - Simplified the website to a calmer single-column-first flow with reduced visual crowding.
 - Fixed embedded JavaScript syntax highlighting in both `.eta` and `.ejs` scriptlet/output blocks.

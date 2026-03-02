@@ -24,7 +24,7 @@ npm run package:extension
 Output:
 
 - `packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-<version>.vsix`
-- Current stable target: `v1.2.0` (`eta-ejs-prettifier-1.2.0.vsix`)
+- Current stable target: `v1.2.1` (`eta-ejs-prettifier-1.2.1.vsix`)
 
 ## Metadata Checklist Before Tagging
 
@@ -44,18 +44,18 @@ Output:
 3. Ensure required GitHub checks are green (`CI`, `Package Extension`).
 4. Create and push tag:
    ```bash
-   git tag v1.2.0
-   git push origin v1.2.0
+   git tag v1.2.1
+   git push origin v1.2.1
    ```
 5. Create release with GitHub CLI and upload VSIX:
    ```bash
-   gh release create v1.2.0 \
-    packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-1.2.0.vsix \
-    --title "v1.2.0" \
+   gh release create v1.2.1 \
+    packages/vscode-eta-ejs-formatter/eta-ejs-prettifier-1.2.1.vsix \
+    --title "v1.2.1" \
      --notes-file CHANGELOG.md
    ```
 6. Validate release asset link:
-   - `https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix`
+   - `https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.1/eta-ejs-prettifier-1.2.1.vsix`
 
 ## Publish Website
 

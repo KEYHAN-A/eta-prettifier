@@ -6,7 +6,7 @@ if (!app) {
   throw new Error("App root not found.");
 }
 
-const version = "v1.2.0";
+const version = "v1.2.1";
 
 app.innerHTML = `
   <div class="page">
@@ -47,7 +47,7 @@ app.innerHTML = `
             <li>Run <code>Format Document</code>.</li>
             <li>Set this extension as default formatter when prompted.</li>
           </ol>
-          <a class="inlineLink" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix">Need offline setup? Download VSIX.</a>
+          <a class="inlineLink" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.1/eta-ejs-prettifier-1.2.1.vsix">Need offline setup? Download VSIX.</a>
         </article>
       </section>
     </header>
@@ -74,7 +74,7 @@ app.innerHTML = `
         <article class="card">
           <h3>VSIX</h3>
           <p>Use release asset for offline/manual install.</p>
-          <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix">Download eta-ejs-prettifier-1.2.0.vsix</a>
+          <a href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.1/eta-ejs-prettifier-1.2.1.vsix">Download eta-ejs-prettifier-1.2.1.vsix</a>
         </article>
         <article class="card">
           <h3>Local Build</h3>
@@ -177,7 +177,7 @@ npm run package:extension</code></pre>
       </p>
       <div class="ctaRow">
         <a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=eta-ejs-prettifier.eta-ejs-prettifier">Install Extension</a>
-        <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.0/eta-ejs-prettifier-1.2.0.vsix">Download VSIX</a>
+        <a class="btn" href="https://github.com/KEYHAN-A/eta-prettifier/releases/download/v1.2.1/eta-ejs-prettifier-1.2.1.vsix">Download VSIX</a>
       </div>
     </section>
 
